@@ -17,6 +17,6 @@
     "deploy": "webpack -d",
     "build" : "webpack -p"
   },
-  "author": "",
+  "author": "Denis Platonov",
   "license": "ISC"
 }
