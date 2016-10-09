@@ -1,4 +1,5 @@
 import React from 'react';
+import Weather from './Weather.jsx';
 
 class WeatherList extends React.Component {
 	render() {
