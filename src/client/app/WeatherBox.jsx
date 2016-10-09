@@ -3,6 +3,14 @@ import WeatherList from './WeatherList.jsx';
 import WeatherForm from './WeatherForm.jsx';
 
 class WeatherBox extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {data: []};
+		this.foundLocation = this.foundLocation.bind(this);
+		this.handleCitySubmit = this.handleCitySubmit.bind(this);
+		this.updateList = this.updateList.bind(this);
+	}
+
 	getLocation() {
 		navigator.geolocation.getCurrentPosition(this.foundLocation);
 	}
@@ -41,6 +49,10 @@ class WeatherBox extends React.Component {
 		}
 	}
 
+	updateList(items) {
+		this.setState({data: items});
+	}
+
 	ajaxRequest(uri) {
 		$.ajax({
 			url: uri,
@@ -60,13 +72,6 @@ class WeatherBox extends React.Component {
 		this.ajaxRequest(apiUrl);
 	}
 
-	constructor(props) {
-		super(props);
-		this.state = {data: []};
-		this.foundLocation = this.foundLocation.bind(this);
-		this.handleCitySubmit = this.handleCitySubmit.bind(this);
-	}
-
 	componentDidMount() {
 		this.getLocation();
 	}
@@ -75,7 +80,7 @@ class WeatherBox extends React.Component {
 		return (
 			<div className="weatherBox">
 				<h1>Weather</h1>
-				<WeatherList data={this.state.data}/>
+				<WeatherList data={this.state.data} updateList={this.updateList}/>
 				<WeatherForm onCitySubmit={this.handleCitySubmit}/>
 			</div>
 		);
