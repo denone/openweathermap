@@ -14,6 +14,12 @@
 > $ npm install
 ```
 
+### To build dev package
+
+```
+> $ npm run dev
+```
+
 ### To build production package
 
 ```

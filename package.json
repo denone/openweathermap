@@ -1,5 +1,6 @@
 {
   "name": "weatherwidget",
+  "private": true,
   "version": "1.0.0",
   "description": "",
   "main": "webpack.config.js",
@@ -14,9 +15,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "webpack -d",
+    "dev": "webpack -d",
     "build" : "webpack -p"
   },
-  "author": "Denis Platonov",
-  "license": "ISC"
+  "author": "Denis Platonov"
 }
