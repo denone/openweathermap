@@ -83,9 +83,9 @@ class WeatherBox extends React.Component {
 	verifyLocalStorage() {
 		if (localStorage.getItem('weatherList')) {
 			this.setState({data: JSON.parse(localStorage.getItem('weatherList'))});
-		} else {
-			this.getLocation();
+			return;
 		}
+		this.getLocation();
 
 	}
 
