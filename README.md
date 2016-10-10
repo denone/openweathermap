@@ -28,6 +28,18 @@
 
 ### To run application
 
+* To run application you need webpack-dev-server, install it with
+
 ```
-Open file src/client/index.html in browser you prefer
+> $ npm install webpack-dev-server -g
 ```
+
+* after you have it installed, run it
+
+```
+> $ webpack-dev-server --progress --colors
+```
+
+* and navidate to application
+ 
+http://localhost:8080/src/client/
