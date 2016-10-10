@@ -47,12 +47,18 @@ class WeatherBox extends React.Component {
 			);
 			if (!alreadySearched.length) {
 				this.setState({data: this.state.data.concat([data])});
+
 			}
 		}
 	}
 
 	updateList(items) {
 		this.setState({data: items});
+	}
+
+	componentDidUpdate() {
+		console.log('componentDidUpdate');
+		localStorage.setItem('weatherList', JSON.stringify(this.state.data));
 	}
 
 	ajaxRequest(uri) {
@@ -74,8 +80,17 @@ class WeatherBox extends React.Component {
 		this.ajaxRequest(apiUrl);
 	}
 
+	verifyLocalStorage() {
+		if (localStorage.getItem('weatherList')) {
+			this.setState({data: JSON.parse(localStorage.getItem('weatherList'))});
+		} else {
+			this.getLocation();
+		}
+
+	}
+
 	componentDidMount() {
-		this.getLocation();
+		this.verifyLocalStorage();
 	}
 
 	render() {
