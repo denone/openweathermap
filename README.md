@@ -25,3 +25,9 @@
 ```
 > $ npm run build
 ```
+
+### To run application
+
+```
+Open file src/client/index.html in browser you prefer
+```
