@@ -1,4 +1,5 @@
 import React from 'react';
+import $ from 'jquery';
 import WeatherList from './WeatherList.jsx';
 import WeatherForm from './WeatherForm.jsx';
 
@@ -9,6 +10,7 @@ class WeatherBox extends React.Component {
 		this.foundLocation = this.foundLocation.bind(this);
 		this.handleCitySubmit = this.handleCitySubmit.bind(this);
 		this.updateList = this.updateList.bind(this);
+		this.ajaxRequest = this.ajaxRequest.bind(this);
 	}
 
 	getLocation() {
